@@ -16,10 +16,27 @@
     BOOL _requestedLocation;
 }
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *conditionsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windLabel;
+@property (weak, nonatomic) IBOutlet UILabel *feelsLikeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *preassureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lowTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *highTempLabel;
+
+
+
+
+
 @property CLLocationManager *locationManager;
 @property CLLocation *location;
 @property (nonatomic) CLPlacemark *placemark;
 @property (nonatomic) FGTNetworking *network;
+@property (nonatomic) FGTOpenWeatherModel *weather;
+
 @end
 
 // NOTE: You must declare the Category before the main implementation,

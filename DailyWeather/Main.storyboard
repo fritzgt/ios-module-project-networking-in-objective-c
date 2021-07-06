@@ -26,7 +26,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IAE-nB-CWc">
                                                 <rect key="frame" x="98" y="0.0" width="218" height="118"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="P1k-Kn-OIh">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="P1k-Kn-OIh">
                                                         <rect key="frame" x="77" y="0.0" width="64" height="64"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="64" id="7Me-qm-0Ir"/>
@@ -106,14 +106,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="g6f-9O-ez3">
                                                 <rect key="frame" x="0.0" y="155" width="177" height="57.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHANCE OF RAIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz1-7x-oK3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="16"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Low" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz1-7x-oK3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="16"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rS-HB-kAq">
-                                                        <rect key="frame" x="0.0" y="24" width="53" height="33.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rS-HB-kAq">
+                                                        <rect key="frame" x="0.0" y="24" width="45.5" height="33.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -162,14 +162,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5xD-Nt-hQU">
                                                 <rect key="frame" x="0.0" y="155" width="177" height="57.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UV INDEX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EF-Nx-e7X">
-                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="16"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EF-Nx-e7X">
+                                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="16"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFn-fP-v1u">
-                                                        <rect key="frame" x="0.0" y="24" width="17.5" height="33.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="67°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFn-fP-v1u">
+                                                        <rect key="frame" x="0.0" y="24" width="45" height="33.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -213,6 +213,18 @@
                             <constraint firstItem="wYL-ue-pif" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="x3M-zR-AT6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="yu2-2G-InX" id="5uh-6X-7qz"/>
+                        <outlet property="conditionsLabel" destination="viE-B4-niT" id="cUu-BH-saC"/>
+                        <outlet property="feelsLikeLabel" destination="SDQ-jN-aBv" id="pW1-ku-b7X"/>
+                        <outlet property="highTempLabel" destination="SFn-fP-v1u" id="ONw-yb-fIX"/>
+                        <outlet property="humidityLabel" destination="C84-c4-bcu" id="IGQ-gb-KXi"/>
+                        <outlet property="iconImageView" destination="P1k-Kn-OIh" id="ncp-cr-Xog"/>
+                        <outlet property="lowTempLabel" destination="0rS-HB-kAq" id="Uxi-g1-5Su"/>
+                        <outlet property="preassureLabel" destination="ZGC-k6-sdS" id="per-WA-Kt7"/>
+                        <outlet property="temperatureLabel" destination="a2W-Xz-HHD" id="6xs-SK-lk4"/>
+                        <outlet property="windLabel" destination="arb-Gt-9Ot" id="0zt-xv-obh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -268,7 +280,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clear-day" width="130" height="130"/>
+        <image name="01d" width="130" height="130"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
