@@ -135,19 +135,31 @@
     NSString *lon = [NSString stringWithFormat:@"%f", location.coordinate.longitude];
     
     
-    // TODO: 1. Parse CurrentWeather.json from App Bundle and update UI
+ 
     [self.network fetchWeather:lat long:lon completion:^(FGTOpenWeatherModel * _Nullable weather, NSError * _Nullable error) {
-        
+        self.weather = weather;
+        //Run from main queue
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateViews];
+        });
     }];
-    // TODO: 2. Refactor and Parse Weather.json from App Bundle and update UI
+     
 }
 
 - (void)updateViews {
     if (self.placemark) {
-        // TODO: Update the City, State label
+        self.cityLabel.text = self.placemark.locality;
+        
     }
-    
-    // TODO: Update the UI based on the current forecast
+    self.iconImageView.image = self.weather.icon;
+    self.conditionsLabel.text = self.weather.desc;
+    self.temperatureLabel.text = [NSString stringWithFormat:@"%.f°F",self.weather.temp];
+    self.windLabel.text = [NSString stringWithFormat:@"%@ %.f mph",self.weather.windDeg, self.weather.windSpeed];
+    self.feelsLikeLabel.text = [NSString stringWithFormat:@"%.f°F",self.weather.feelsLike];
+    self.humidityLabel.text = [NSString stringWithFormat:@"%.f%%",self.weather.humidity];
+    self.preassureLabel.text = [NSString stringWithFormat:@"%.2f inHg",self.weather.pressure];
+    self.lowTempLabel.text = [NSString stringWithFormat:@"%.f°F",self.weather.tempMin];
+    self.highTempLabel.text = [NSString stringWithFormat:@"%.f°F",self.weather.tempMax];
 }
 
 @end
