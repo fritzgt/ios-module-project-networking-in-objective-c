@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04EBA7B02691EC1A00ED8FBB /* FGTDailyWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBA7AF2691EC1A00ED8FBB /* FGTDailyWeatherTests.m */; };
 		04EBA7BF26924BFE00ED8FBB /* FGTOpenWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBA7BE26924BFE00ED8FBB /* FGTOpenWeatherModel.m */; };
+		04EBA7D6269347DF00ED8FBB /* FGTNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBA7D5269347DF00ED8FBB /* FGTNetworking.m */; };
 		04EE6D4B2691926F004283D2 /* FGTWeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE6D4A2691926E004283D2 /* FGTWeatherForecast.m */; };
 		04EE6D5026919559004283D2 /* OpenWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = 04EE6D4F26919559004283D2 /* OpenWeather.json */; };
 		04EE6D572691A6E9004283D2 /* LSIFileHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = BD69316223FD90D100C0DF09 /* LSIFileHelper.h */; };
@@ -54,6 +55,8 @@
 		04EBA7AF2691EC1A00ED8FBB /* FGTDailyWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTDailyWeatherTests.m; sourceTree = "<group>"; };
 		04EBA7BD26924BFE00ED8FBB /* FGTOpenWeatherModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGTOpenWeatherModel.h; sourceTree = "<group>"; };
 		04EBA7BE26924BFE00ED8FBB /* FGTOpenWeatherModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTOpenWeatherModel.m; sourceTree = "<group>"; };
+		04EBA7D4269347DF00ED8FBB /* FGTNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGTNetworking.h; sourceTree = "<group>"; };
+		04EBA7D5269347DF00ED8FBB /* FGTNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTNetworking.m; sourceTree = "<group>"; };
 		04EE6D492691926E004283D2 /* FGTWeatherForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGTWeatherForecast.h; sourceTree = "<group>"; };
 		04EE6D4A2691926E004283D2 /* FGTWeatherForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTWeatherForecast.m; sourceTree = "<group>"; };
 		04EE6D4F26919559004283D2 /* OpenWeather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OpenWeather.json; sourceTree = "<group>"; };
@@ -120,6 +123,15 @@
 			name = LambdaSDK;
 			sourceTree = "<group>";
 		};
+		04EBA7D32693479C00ED8FBB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				04EBA7D4269347DF00ED8FBB /* FGTNetworking.h */,
+				04EBA7D5269347DF00ED8FBB /* FGTNetworking.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		04EE6D41269058BB004283D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +187,7 @@
 		BD69313423FD905200C0DF09 /* DailyWeather */ = {
 			isa = PBXGroup;
 			children = (
+				04EBA7D32693479C00ED8FBB /* Networking */,
 				04EE6D4E26919276004283D2 /* Model */,
 				04EE6D42269058D1004283D2 /* Storyboards */,
 				BDFC8F6123FD94F600A39B21 /* View Controllers */,
@@ -352,6 +365,7 @@
 				BD69314823FD905300C0DF09 /* main.m in Sources */,
 				BD69313A23FD905200C0DF09 /* SceneDelegate.m in Sources */,
 				04EE6D4B2691926F004283D2 /* FGTWeatherForecast.m in Sources */,
+				04EBA7D6269347DF00ED8FBB /* FGTNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

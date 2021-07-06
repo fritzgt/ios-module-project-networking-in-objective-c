@@ -22,4 +22,24 @@
 //    NSData *data = [LSIFileHelper loadData];
 }
 
+- (void)testPlayground
+{
+    int (^largestInteger)(int,int,int) = ^(int a, int b, int c) {
+        //Check for the largest int
+        int largest = a;
+        if(a < b) {
+            largest = b;
+        }else if (a < c){
+            largest = c;
+        }
+        
+        return largest;
+    };
+    
+    int result = largestInteger(55, -3, 409);
+    NSLog(@"Higest value= %i",result);
+    XCTAssertTrue(result == 409);
+}
+
+
 @end

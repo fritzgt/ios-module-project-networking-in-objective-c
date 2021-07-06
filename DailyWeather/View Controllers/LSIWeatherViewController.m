@@ -10,6 +10,7 @@
 #import "LSIWeatherIcons.h"
 #import "LSIErrors.h"
 #import "LSILog.h"
+#import "FGTNetworking.h"
 
 @interface LSIWeatherViewController () {
     BOOL _requestedLocation;
@@ -18,7 +19,7 @@
 @property CLLocationManager *locationManager;
 @property CLLocation *location;
 @property (nonatomic) CLPlacemark *placemark;
-
+@property (nonatomic) FGTNetworking *network;
 @end
 
 // NOTE: You must declare the Category before the main implementation,
@@ -59,6 +60,7 @@
     
     // TODO: Transparent toolbar with info button (Settings)
     // TODO: Handle settings button pressed
+    self.network = [[FGTNetworking alloc] init];
 }
 
 //https://developer.apple.com/documentation/corelocation/converting_between_coordinates_and_user-friendly_place_names
@@ -66,7 +68,7 @@
                             withCompletion:(void (^)(CLPlacemark *, NSError *))completionHandler {
     if (location) {
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-                
+        
         [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
             if (error) {
                 completionHandler(nil, error);
@@ -112,12 +114,14 @@
 }
 
 - (void)requestWeatherForLocation:(CLLocation *)location {
+    NSString *lat = [NSString stringWithFormat:@"%f", location.coordinate.latitude];
+    NSString *lon = [NSString stringWithFormat:@"%f", location.coordinate.longitude];
+    
     
     // TODO: 1. Parse CurrentWeather.json from App Bundle and update UI
-    
-    
-    
-    
+    [self.network fetchWeather:lat long:lon completion:^(FGTOpenWeatherModel * _Nullable weather, NSError * _Nullable error) {
+        
+    }];
     // TODO: 2. Refactor and Parse Weather.json from App Bundle and update UI
 }
 
