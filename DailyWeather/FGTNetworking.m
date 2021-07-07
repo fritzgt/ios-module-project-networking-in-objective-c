@@ -8,35 +8,33 @@
 
 #import "FGTNetworking.h"
 
-@implementation FGTNetworking
 
+static NSString *FGTOpenWeatherModelURL = @"https://api.openweathermap.org/data/2.5/weather";
+
+@implementation FGTNetworking
 
 -(void)fetchWeather:(NSString *)aLat long:(NSString *)aLong completion:(OpenWeatherCompletion)completion
 {
     //api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-    NSURL *baseURL = [NSURL URLWithString:@"api.openweathermap.org/data/2.5/weather"];
-    NSString *appKey = @"98e928ba74109243f3daa2e979e3d421";
-    NSURLComponents *componets = [[NSURLComponents alloc] initWithURL:baseURL resolvingAgainstBaseURL:YES];
     
-
-//    Queries
-    NSURLQueryItem *key = [NSURLQueryItem queryItemWithName:@"appKey" value: appKey];
+    //api.openweathermap.org/data/2.5/weather?lat=37.785834&lon=-122.406417&appid=98e928ba74109243f3daa2e979e3d421
+    NSURLComponents *componets = [[NSURLComponents alloc] initWithString:FGTOpenWeatherModelURL];
+    NSString *appid = @"98e928ba74109243f3daa2e979e3d421";
+    
+    //    Queries
+    NSURLQueryItem *key = [NSURLQueryItem queryItemWithName:@"appid" value: appid];
     NSURLQueryItem *lat = [NSURLQueryItem queryItemWithName:@"lat" value: aLat];
-    NSURLQueryItem *lon = [NSURLQueryItem queryItemWithName:@"lat" value: aLong];
+    NSURLQueryItem *lon = [NSURLQueryItem queryItemWithName:@"lon" value: aLong];
     componets.queryItems = @[lat, lon, key];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:componets.URL];
+    
+    NSURL *url = componets.URL;
+    NSLog(@"Requested data to: %@",url);
     
     //NSURLSession
-    [[NSURLSession.sharedSession dataTaskWithRequest: request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-        
+    NSURLSessionDataTask *dataTask = [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if(error){
-            completion(nil,error);
-            return;
-        }
-        
-        if(!data){
             completion(nil,error);
             return;
         }
@@ -45,25 +43,28 @@
         NSError *jsonError = nil;
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
         
-        if(jsonError){
+        if(!json){
             completion(nil,jsonError);
             return;
         }
         
-        NSLog(@"JSON: %@", json);
+        NSLog(@"JSON Error: %@", json);
         
         FGTOpenWeatherModel *weather =[[FGTOpenWeatherModel alloc] initWithDictionary:json];
         
-        if(weather){
-            completion(weather, nil);
-            return;
-        }else if(json) {
+        if(!weather) {
             completion(nil,error);
             return;
         }
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(weather, nil);
+        });
         
         
-    }]resume];
+        
+    }];
+    
+    [dataTask resume];
 }
 @end

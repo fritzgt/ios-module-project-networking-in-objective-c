@@ -137,6 +137,9 @@
     
  
     [self.network fetchWeather:lat long:lon completion:^(FGTOpenWeatherModel * _Nullable weather, NSError * _Nullable error) {
+        if(error){
+            NSLog(@"Error: %@",error);
+        }
         self.weather = weather;
         //Run from main queue
         dispatch_async(dispatch_get_main_queue(), ^{

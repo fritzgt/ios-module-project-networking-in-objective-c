@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-//#import "LSIFileHelper.h"
+#import "LSIFileHelper.h"
 
 
 @interface FGTDailyWeatherTests : XCTestCase
@@ -40,6 +40,16 @@
     NSLog(@"Higest value= %i",result);
     XCTAssertTrue(result == 409);
 }
+
+-(void)testBlock
+{
+    int(^performMath)(int a, int b) = ^int(int a, int b){
+        return a + b;
+    };
+    
+    int result = performMath(5,4);
+    NSLog(@"%d",result);
+};
 
 
 @end
