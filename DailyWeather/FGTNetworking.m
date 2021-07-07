@@ -25,8 +25,10 @@ static NSString *FGTOpenWeatherModelURL = @"https://api.openweathermap.org/data/
     NSURLQueryItem *key = [NSURLQueryItem queryItemWithName:@"appid" value: appid];
     NSURLQueryItem *lat = [NSURLQueryItem queryItemWithName:@"lat" value: aLat];
     NSURLQueryItem *lon = [NSURLQueryItem queryItemWithName:@"lon" value: aLong];
-    componets.queryItems = @[lat, lon, key];
+    NSURLQueryItem *units = [NSURLQueryItem queryItemWithName:@"units" value: @"imperial"];
+    componets.queryItems = @[lat, lon, key,units];
     
+
     
     NSURL *url = componets.URL;
     NSLog(@"Requested data to: %@",url);
